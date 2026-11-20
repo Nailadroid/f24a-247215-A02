@@ -11,5 +11,17 @@
     <p id="times">Times</p>
     <ul id="slip"></ul>
 
+    <script>
+        var count = 0;
+
+        var btn = document.getElementById("find");
+        var timesDisplay = document.getElementById("times");
+
+        btn.onclick = function() {
+            count = count + 1;
+            timesDisplay.innerHTML = count;
+        };
+    </script>
+
 </body>
 </html>
