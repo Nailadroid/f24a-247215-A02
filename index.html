@@ -12,14 +12,36 @@
     <ul id="slip"></ul>
 
     <script>
+       
+        var serverData = {
+            pen: 50
+        };
+
         var count = 0;
 
         var btn = document.getElementById("find");
+        var inputBox = document.getElementById("name");
+        var cardDisplay = document.getElementById("card");
         var timesDisplay = document.getElementById("times");
+        var slipList = document.getElementById("slip");
 
         btn.onclick = function() {
+         
             count = count + 1;
+
             timesDisplay.innerHTML = count;
+
+            var itemName = inputBox.value;
+
+            if (serverData[itemName]) {
+              
+                cardDisplay.innerHTML = serverData[itemName];
+
+                var li = document.createElement("li");
+                li.innerHTML = itemName;
+
+                slipList.appendChild(li);
+            }
         };
     </script>
 
